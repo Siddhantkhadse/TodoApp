@@ -3,9 +3,36 @@
 <title>
     <%=title%>
 </title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
     <h1>App / <%=title%></h1>
+
+<form action="/create-task" method="POST">
+<input type="text" name="description" placeholder="Description">
+<br>
+<input type="text" name="category" placeholder="Category">
+<input type="date" name="date">
+<br>
+<button type="submit"></button>
+
+</form action="create-task" method="POST"> 
+
+<% for(let i of task_list){ %>
+<div class="task">
+<div class="details">
+<p><%=i.description%></p>
+<p><%=i.category%></p>
+<p><%=i.date%></p>
+</div>
+<div class="delete-button">
+    <a href="/delete-task/?id=<%=i.description%>">
+      <i class="fas fa-trash-alt"></i>
+    </a>
+</div>  
+</div>
+
+<% } %>
 
 
 </body>
