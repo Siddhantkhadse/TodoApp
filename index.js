@@ -7,16 +7,17 @@ const mongoose = require('./config/mongoose');
 
 app.use(urlencoded());
 
-//use express JS router
-
-app.use('/',require('./routes/index'));
 
 
-
+app.use(express.static('./assets'));
 
 //setup view engine
 app.set('view engine','ejs');
 app.set('views','./views');
+
+//use express JS router
+
+app.use('/',require('./routes/index'));
 
 app.listen(port,function(err){
 
