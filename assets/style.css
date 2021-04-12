@@ -57,7 +57,6 @@ button{
 .task {
     border: 1px solid black;
     font-family: sans-serif;
-    /* margin: 0px; */
     padding: 6px;
     margin-top: 10px;
     margin-right: -5px;
@@ -68,9 +67,6 @@ button{
     border: solid 1px black;
     width: 131px;
     height: 36px;
-    /* padding: 3px; */
-    /* padding-left: 8px; */
-    /* padding-top: 8px; */
     background-color: red;
     color: white;
     font-size: large;
@@ -83,15 +79,47 @@ button{
 .taskd{
     font-size: large;
 }
+
+#deleteselected {
+    border: black 1px solid;
+    height: 40px;
+    width: 110px;
+    background-color: red;
+    border-radius: 10px;
+    font-family: revert;
+    font-size: 18px;
+    color: white;
+}
+#deleteselected:hover{
+    background-color: blue;
+}
+
 .delete-button:hover{
     background-color: black;
 }
 #checkbox {
     border: 2px solid black;
-    /* padding: 8px; */
-    padding-left: 27px;
-    height: 30px;
-    width: 30px;
-    /* margin: 11px; */
-    margin-left: 20px;
+    margin-left: -4px;
+    height: 33px;
+    width: 45px;
+    margin-left: 9px;
+    margin-bottom: -50px;
+    position: absolute;
+}
+#dt {
+    border: solid black 1px;
+    height: 45px;
+    width: 115px;
+    color: white;
+    background-color: red;
+    padding-left: 10px;
+    border-radius: 14px;
+    font-family: system-ui;
+    font-size: 15px;
+  
+}
+/* i was getting a text glitch that's why i added this css */
+a{
+text-decoration: none;
+
 }

@@ -23,9 +23,14 @@
         <input type="text" name="category" placeholder="Enter Title" class="category">
         <input type="date" name="date" class="date" >
         <textarea type="text" name="description" placeholder="Description" rows="4" cols="50" class="description"></textarea>
+        <!-- submit button to fetch the information from users -->
+
         <button type="submit" class="submitbutton" ><i class="fas fa-plus"></i> ADD TASK</button>
+
+        <!-- delete button for deleting selected atsks -->
+        <button type="submit" form="delete" id="deleteselected"><i class="far fa-trash-alt"></i> Delete</button>
         </div>
-       <button type="submit" form="delete">Delete</button>
+       
     </form action="create-task" method="POST"> 
 
 <!-- Displaying Tasks using task_list variable -->
@@ -45,19 +50,16 @@
 
 <!-- This is the delete anchor tag which contains delete button -->
 
-    <a href="/deleteTask/<%=i.id%>">
-        
-        <i class="far fa-trash-alt"></i>
-          Delete Task
-    
-</a> 
 
-    
+<a href="/deleteTask/<%=i.id%>">
+    <button type="button" id="dt">
+       Delete task
+    <i class="far fa-trash-alt"></i>
+    </button>
+</a>
 
 <input type="checkbox" name="task" id="checkbox"value="<%=i._id%>">
 </div>
-<!-- <input type="checkbox" name="task" id="" value="<%=i._id%>"> -->
-
 <% } %>
 </form>
 

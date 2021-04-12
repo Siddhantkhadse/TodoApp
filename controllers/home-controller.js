@@ -18,8 +18,6 @@
         return res.redirect('back');
     });
 
-  
-
 }
 
 //Delete function
@@ -27,14 +25,15 @@ module.exports.delete=function(req, res){
     console.log(req.params);
     let description=req.params.id;
 
-//Deleting the task
+//Deleting the selecting tasks
     Tasks.findByIdAndDelete(description,function(err){
 
         if(err){
         console.log('error',err);
         return;
         }
-return res.redirect('back');
+
+    return res.redirect('back');
 
    });
   
@@ -61,9 +60,8 @@ module.exports.home= function(req, res){
 //delete a list of tasks
 module.exports.delete_list=function(req,res){
    let list=req.body.task;
-   console.log(typeof(list));
+
    if(typeof(list)=='object'){
-       console.log("working");
        for(let i of list){
            Tasks.findByIdAndDelete(i,function(err){
                if(err){
