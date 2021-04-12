@@ -11,7 +11,10 @@ router.get('/',homeController.home);
 router.post('/create-task',homeController.create);
 
 //get request for deleting tasks
-router.get('/delete-task',homeController.delete);
+router.get('/deleteTask/:id',homeController.delete);
+
+//delete a list of task
+router.post('/delete',homeController.delete_list);
 
 //exporting data
 module.exports=router;

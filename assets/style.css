@@ -86,3 +86,12 @@ button{
 .delete-button:hover{
     background-color: black;
 }
+#checkbox {
+    border: 2px solid black;
+    /* padding: 8px; */
+    padding-left: 27px;
+    height: 30px;
+    width: 30px;
+    /* margin: 11px; */
+    margin-left: 20px;
+}

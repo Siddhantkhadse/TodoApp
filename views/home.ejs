@@ -25,10 +25,12 @@
         <textarea type="text" name="description" placeholder="Description" rows="4" cols="50" class="description"></textarea>
         <button type="submit" class="submitbutton" ><i class="fas fa-plus"></i> ADD TASK</button>
         </div>
+       <button type="submit" form="delete">Delete</button>
     </form action="create-task" method="POST"> 
 
 <!-- Displaying Tasks using task_list variable -->
 
+<form action="/delete" method="post" id="delete">
 <% for(let i of task_list){ %>
 <div class="task">
 
@@ -41,19 +43,23 @@
       <p class="taskd"><%=i.description%></p>
     </div>
 
-    <!-- This is the delete anchor tag which contains delete button -->
+<!-- This is the delete anchor tag which contains delete button -->
 
-    <a href="/delete-task/?id=<%=i.description%>">
-         <button class="delete-button" type="submit">
-            <i class="far fa-trash-alt"></i>
-              Delete Task
-         </button>
-    </a> 
+    <a href="/deleteTask/<%=i.id%>">
+        
+        <i class="far fa-trash-alt"></i>
+          Delete Task
+    
+</a> 
 
+    
+
+<input type="checkbox" name="task" id="checkbox"value="<%=i._id%>">
 </div>
-<!-- //<input type="checkbox" name="" id=""> -->
+<!-- <input type="checkbox" name="task" id="" value="<%=i._id%>"> -->
 
 <% } %>
+</form>
 
 </body>
 </html>

@@ -24,13 +24,11 @@
 
 //Delete function
 module.exports.delete=function(req, res){
-   
-
-    let description=req.query.id;
-    console.log(description);
+    console.log(req.params);
+    let description=req.params.id;
 
 //Deleting the task
-    Tasks.findOneAndDelete({description: description},function(err){
+    Tasks.findByIdAndDelete(description,function(err){
 
         if(err){
         console.log('error',err);
@@ -40,7 +38,6 @@ return res.redirect('back');
 
    });
   
-
 }
 
 //Returning Home Page
@@ -60,3 +57,30 @@ module.exports.home= function(req, res){
  
     });
 };
+
+//delete a list of tasks
+module.exports.delete_list=function(req,res){
+   let list=req.body.task;
+   console.log(typeof(list));
+   if(typeof(list)=='object'){
+       console.log("working");
+       for(let i of list){
+           Tasks.findByIdAndDelete(i,function(err){
+               if(err){
+               console.log("error in deleting",err);
+               return;
+               }
+               console.log("deleted");
+           });
+       }
+   }
+   else{
+       Tasks.findByIdAndDelete(list,function(err){
+           if(err){
+               console.log("error in deleting",err);
+               return;
+           }
+       });
+   }
+   return res.redirect("/");
+}
