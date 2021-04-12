@@ -43,6 +43,7 @@ button{
     /* margin: 0px; */
     padding: 6px;
     margin-top: 10px;
+    margin-right: -5px;
 }
 .delete-button {
     border: solid 1px black;
@@ -54,6 +55,6 @@ button{
     background-color: red;
     color: white;
 }
-.fas fa-trash-alt{
-    color: black;
+.details {
+    margin-top: -20px;
 }
