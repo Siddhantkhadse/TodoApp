@@ -1,3 +1,59 @@
-body{
-    background-color: aqua;
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+input {
+    height: 30px;
+    width: 49%;
+    font-family: sans-serif;
+    margin-top: 28px;
+    margin: 5px;
+}
+.inputcontainer {
+    /* border: 2px solid black; */
+    /* height: 100%; */
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    /* margin-top: 15px; */
+}
+.description {
+    height: 120px;
+    width: 100%;
+}
+button{
+    height: 20px;
+}
+.submitbutton {
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 110px;
+    margin: 5px;
+}
+.date {
+    width: 128px;
+}
+
+.task {
+    border: 1px solid black;
+    font-family: sans-serif;
+    /* margin: 0px; */
+    padding: 6px;
+    margin-top: 10px;
+}
+.delete-button {
+    border: solid 1px black;
+    width: 115px;
+    height: 26px;
+    /* padding: 3px; */
+    padding-left: 8px;
+    padding-top: 8px;
+    background-color: red;
+    color: white;
+}
+.fas fa-trash-alt{
+    color: black;
 }

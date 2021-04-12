@@ -38,24 +38,6 @@ return res.redirect('back');
 
 }
 
-var contactList = [
-    {
-        description: "Arpan eats burger",
-        category: "1111111111",
-        date: "13/04/20"
-    },
-    {
-        description: "Tony Stark",
-        category: "1234567890",
-        date: "1111111111"
-    },
-    {
-        description: "Coding Ninjas",
-        category: "12131321321",
-        date: "1111111111"
-    }
-]
-//
 module.exports.home= function(req, res){
 
     Tasks.find({},function(err,tasks){
@@ -65,7 +47,7 @@ module.exports.home= function(req, res){
  }
   
      return res.render('home',{
-         title: "Contact List",
+         title: "Todo App",
          task_list: tasks
      });
  
