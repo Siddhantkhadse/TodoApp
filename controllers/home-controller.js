@@ -1,9 +1,10 @@
-
+//fetching our data from models folder through tasks.js
  const Tasks=require('../models/tasks');
 
+//Create function
  module.exports.create=function(req, res){
    
-
+//Adding information to our data base
     Tasks.create({
         description:req.body.description,
         date:req.body.date,
@@ -20,11 +21,15 @@
   
 
 }
+
+//Delete function
 module.exports.delete=function(req, res){
    
 
     let description=req.query.id;
     console.log(description);
+
+//Deleting the task
     Tasks.findOneAndDelete({description: description},function(err){
 
         if(err){
@@ -38,6 +43,7 @@ return res.redirect('back');
 
 }
 
+//Returning Home Page
 module.exports.home= function(req, res){
 
     Tasks.find({},function(err,tasks){
@@ -45,7 +51,8 @@ module.exports.home= function(req, res){
      console.log('Error from DB');
      return;
  }
-  
+
+//passing the all the tasks through task_list variable
      return res.render('home',{
          title: "Todo App",
          task_list: tasks

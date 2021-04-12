@@ -3,44 +3,57 @@
 <title>
     <%=title%>
 </title>
+
+<!-- Linking font aweasome and CSS to our HTML Page -->
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 </head>
+
+<!-- head tags ends here and body starts here -->
+
 <body>
     <h1> <%=title%></h1>
+
+<!-- Input form to fetch details from user -->
 
     <form action="/create-task" method="POST">
         <div class="inputcontainer">
         <input type="text" name="category" placeholder="Enter Title" class="category">
         <input type="date" name="date" class="date" >
-        <input put type="text" name="description" placeholder="Description" class="description">
+        <textarea type="text" name="description" placeholder="Description" rows="4" cols="50" class="description"></textarea>
         <button type="submit" class="submitbutton" ><i class="fas fa-plus"></i> ADD TASK</button>
-    </div>
-        </form action="create-task" method="POST"> 
+        </div>
+    </form action="create-task" method="POST"> 
 
-
+<!-- Displaying Tasks using task_list variable -->
 
 <% for(let i of task_list){ %>
 <div class="task">
-<div class="details">
-<p><h2><%=i.category%></h2></p>
-<p><%=i.date%></p>   
-<p><%=i.description%></p>
+
+<!-- All task details are in details container -->
+
+    <div class="details">
+
+       <p><h2><%=i.category%></h2></p>
+       <p><%=i.date%></p>   
+      <p class="taskd"><%=i.description%></p>
+    </div>
+
+    <!-- This is the delete anchor tag which contains delete button -->
+
+    <a href="/delete-task/?id=<%=i.description%>">
+         <button class="delete-button" type="submit">
+            <i class="far fa-trash-alt"></i>
+              Delete Task
+         </button>
+    </a> 
 
 </div>
-<div class="delete-button">
-    Delete Task
-    <a href="/delete-task/?id=<%=i.description%>">
-       <i class="fas fa-trash-alt"></i>
-       </a> 
-      
-</div>  
-</div>
+<!-- //<input type="checkbox" name="" id=""> -->
 
 <% } %>
 
 </body>
-
-
 </html>

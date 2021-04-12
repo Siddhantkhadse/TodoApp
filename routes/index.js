@@ -1,20 +1,19 @@
+//express server
 const express=require('express');
-
 const router=express.Router();
 const homeController=require('../controllers/home-controller');
 console.log('router loaded');
 
+//homepage get request
 router.get('/',homeController.home);
 
-router.use('/users',require('./users'));
-
+//post request for creating tasks
 router.post('/create-task',homeController.create);
+
+//get request for deleting tasks
 router.get('/delete-task',homeController.delete);
 
-//for any further routes,access from here
-//router.use('/routerName',require('./routerfile'))
-
- 
-
+//exporting data
 module.exports=router;
  
+//passing the final data to homecontroller

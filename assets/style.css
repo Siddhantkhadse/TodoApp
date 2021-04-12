@@ -1,8 +1,14 @@
+/* css for form and body */
 h1 {
     font-family: sans-serif;
     text-align: center;
+    color: black;
 }
-
+body {
+    background-image: url(sam.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 input {
     height: 30px;
@@ -10,18 +16,23 @@ input {
     font-family: sans-serif;
     margin-top: 28px;
     margin: 5px;
+    font-size: larger;
+    border-radius: 6px;
+    border: 2px, black ,solid;
+    border: 1px solid black;
 }
 .inputcontainer {
-    /* border: 2px solid black; */
-    /* height: 100%; */
     width: 100%;
     height: auto;
     display: inline-block;
-    /* margin-top: 15px; */
 }
 .description {
     height: 120px;
     width: 100%;
+    margin: 5px;
+    font-family: sans-serif;
+    font-size: larger;
+    border-radius: 10px;
 }
 button{
     height: 20px;
@@ -32,10 +43,16 @@ button{
     height: 40px;
     width: 110px;
     margin: 5px;
+    border-radius: 10px;
+}
+.submitbutton:hover{
+    background-color: blue;
 }
 .date {
-    width: 128px;
+    width: 170px;
 }
+
+/* task css starts from here */
 
 .task {
     border: 1px solid black;
@@ -44,17 +61,28 @@ button{
     padding: 6px;
     margin-top: 10px;
     margin-right: -5px;
+    background: white;
+    border-radius: 8px;
 }
 .delete-button {
     border: solid 1px black;
-    width: 115px;
-    height: 26px;
+    width: 131px;
+    height: 36px;
     /* padding: 3px; */
-    padding-left: 8px;
-    padding-top: 8px;
+    /* padding-left: 8px; */
+    /* padding-top: 8px; */
     background-color: red;
     color: white;
+    font-size: large;
+    font-family: sans-serif;
+    border-radius: 6px;
 }
 .details {
     margin-top: -20px;
+}
+.taskd{
+    font-size: large;
+}
+.delete-button:hover{
+    background-color: black;
 }

@@ -1,3 +1,4 @@
+//our config file for mongodb with all the required parameters date description and category
 const mongoose=require('mongoose');
 const TaskSchema=new mongoose.Schema({
 
