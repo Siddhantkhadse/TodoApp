@@ -1,6 +1,8 @@
 //express server
 const express=require('express');
 const router=express.Router();
+
+//getting all the functions from homecontroller
 const homeController=require('../controllers/home-controller');
 console.log('router loaded');
 
